@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fe155ff065.js" crossorigin="anonymous"></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@500&display=swap" rel="stylesheet">  
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            background: linear-gradient(to left,violet,white,rgb(129, 129, 246))
+        }
+        section {
+    padding: 30px;
+    box-shadow: none; /* Remove the box shadow */
+      }
+       p{
+          font-family: cursive;
+       }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        .selection, .chose {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .button {
+            padding: 12px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 22%;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .button.checked {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .type input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .btn-submit {
+            display: block;
+            background-color: #54a0f1;
+            color: white;
+            font-size: 16px;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-submit:active {
+            background-color: #00408d;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Mental Health Quiz</h2>
+        <p>Please give this quiz to check your mental health status</p>
+        <form th:action="@{/result}" method="post" th:object="${quiz1}">
+        <label for="name"><i class="fa-solid fa-arrow-right"></i> Hi, What's your name?</label>
+        <input type="text" id="name" placeholder="Type your answer here..." name="patientName" >
+        <!-- Question 1 -->
+        <div class="question">
+            <label for="feelings1">1 <i class="fa-solid fa-arrow-right"></i> In the last 2 weeks, how often have you been bothered by <b>little interest or pleasure in doing things?</b></label>
+            <p class="selection">Select all that apply</p>
+            <p class="chose">Choose as many as you like</p>
+            <div class="buttons">
+                <button class="button" onclick="toggleCheck(this)">Not at all</button>
+                <button class="button" onclick="toggleCheck(this)">Several days</button>
+                <button class="button" onclick="toggleCheck(this)">More than half the days</button>
+                <button class="button" onclick="toggleCheck(this)">Nearly Everyday</button>
+            </div>
+            <div class="type">
+                <label for="answer1">Type your answer here...</label>
+                <input type="text" class="text"  name="question1" >
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <label for="feelings2">2 <i class="fa-solid fa-arrow-right"></i> In the last 2 weeks, how often have you been bothered by <b>feeling down, depressed, or hopeless?</b></label>
+            <p class="selection">Select all that apply</p>
+            <div class="buttons">
+                <button class="button" onclick="toggleCheck(this)">Not at all</button>
+                <button class="button" onclick="toggleCheck(this)">Several days</button>
+                <button class="button" onclick="toggleCheck(this)">More than half the days</button>
+                <button class="button" onclick="toggleCheck(this)">Nearly Everyday</button>
+            </div>
+            <div class="type">
+                <label for="answer2">Type your answer here...</label>
+                <input type="text" class="text"  name="question2" >
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <label for="feelings3">3 <i class="fa-solid fa-arrow-right"></i> In the last 2 weeks, how often have you been bothered by <b>trouble falling or staying asleep, or sleeping too much?</b></label>
+            <p class="selection">Select all that apply</p>
+            <div class="buttons">
+                <button class="button" onclick="toggleCheck(this)">Not at all</button>
+                <button class="button" onclick="toggleCheck(this)">Several days</button>
+                <button class="button" onclick="toggleCheck(this)">More than half the days</button>
+                <button class="button" onclick="toggleCheck(this)">Nearly Everyday</button>
+            </div>
+            <div class="type">
+                <label for="answer3">Type your answer here...</label>
+                <input type="text" class="text"  name="question3" >
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <label for="feelings4">4 <i class="fa-solid fa-arrow-right"></i> In the last 2 weeks, how often have you been bothered by <b>feeling tired or having little energy?</b></label>
+            <p class="selection">Select all that apply</p>
+            <div class="buttons">
+                <button class="button" onclick="toggleCheck(this)">Not at all</button>
+                <button class="button" onclick="toggleCheck(this)">Several days</button>
+                <button class="button" onclick="toggleCheck(this)">More than half the days</button>
+                <button class="button" onclick="toggleCheck(this)">Nearly Everyday</button>
+            </div>
+            <div class="type">
+                <label for="answer4">Type your answer here...</label>
+                <input type="text" class="text"  name="question4" >
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <label for="feelings5">5 <i class="fa-solid fa-arrow-right"></i> In the last 2 weeks, how often have you been bothered by <b>poor appetite or overeating?</b></label>
+            <p class="selection">Select all that apply</p>
+            <div class="buttons">
+                <button class="button" onclick="toggleCheck(this)">Not at all</button>
+                <button class="button" onclick="toggleCheck(this)">Several days</button>
+                <button class="button" onclick="toggleCheck(this)">More than half the days</button>
+                <button class="button" onclick="toggleCheck(this)">Nearly Everyday</button>
+            </div>
+            <div class="type">
+                <label for="answer5">Type your answer here...</label>
+                <input type="text" class="text"  name="question5" >
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <label for="feelings6">6 <i class="fa-solid fa-arrow-right"></i> In the last 2 weeks, how often have you been bothered by <b>feeling bad about yourself—or that you are a failure or have let yourself or your family down?</b></label>
+            <p class="selection">Select all that apply</p>
+            <div class="buttons">
+                <button class="button" onclick="toggleCheck(this)">Not at all</button>
+                <button class="button" onclick="toggleCheck(this)">Several days</button>
+                <button class="button" onclick="toggleCheck(this)">More than half the days</button>
+                <button class="button" onclick="toggleCheck(this)">Nearly Everyday</button>
+            </div>
+            <div class="type">
+                <label for="answer6">Type your answer here...</label>
+                <input type="text" class="text"  name="question6" >
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <label for="feelings7">7 <i class="fa-solid fa-arrow-right"></i> In the last 2 weeks, how often have you been bothered by <b>thoughts that you would be better off dead, or of hurting yourself in some way?</b></label>
+            <p class="selection">Select all that apply</p>
+            <div class="buttons">
+                <button class="button" onclick="toggleCheck(this)">Not at all</button>
+                <button class="button" onclick="toggleCheck(this)">Several days</button>
+                <button class="button" onclick="toggleCheck(this)">More than half the days</button>
+                <button class="button" onclick="toggleCheck(this)">Nearly Everyday</button>
+            </div>
+            <div class="type">
+                <label for="answer7">Type your answer here...</label>
+                <input type="text" class="text" name="question7" >
+            </div>
+        </div>
+        <!-- Submit Button -->
+        <a href="/result">
+            <button class="btn-submit">Submit</button>
+        </a>
+       </form>
+    </section>
+
+    <script>
+        // Toggle button checked state
+        function toggleCheck(button) {
+            button.classList.toggle("checked");
+        }
+    </script>
+</body>
+</html>

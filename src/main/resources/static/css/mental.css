@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(80, 80, 235);
+  color: #333;
+}
+
+h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  color: aliceblue;
+}
+
+.container {
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 70% 30% 62% 38% / 29% 69% 31% 71%;
+  background-color: rgb(247, 230, 209);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+  width: 35%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to top,violet,white);
+}
+
+.image img {
+  width: 40%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin: 10px 10px;
+}
+
+.title {
+  font-size: 1.25em;
+  color: #111827;
+  margin: 15px 0;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+.desc {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.5;
+  padding: 0 15px 15px 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.rights {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 0.9em;
+  color: white;
+}
+
+.lets{
+  color: white;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .container {
+      width: 80%;
+      padding: 15px;
+  }
+
+  .card-container card{
+      width: 70%;
+  }
+
+  .title, .desc {
+      text-align: center;
+  }
+
+  .image img {
+      height: auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .card-container {
+      grid-template-columns: 1fr;
+  }
+
+  .card {
+      width: 100%;
+      margin: 10px 0;
+  }
+
+  .title {
+      font-size: 1.1em;
+  }
+
+  .desc {
+      font-size: 0.9em;
+  }
+}

@@ -1,0 +1,290 @@
+@charset "UTF-8";
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(to left, white, violet);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand img {
+    border-radius: 50%;
+}
+
+span {
+    color: black;
+    font-weight: bold; /* Bold text */
+    font-size: 1.2em;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+.nav-links li a {
+    color: black;
+    text-decoration: none;
+    padding: 15px 15px;
+    font-size: 18px; /* Increased font size */
+    transition: color 0.3s, background-color 0.3s, transform 0.2s;
+    border-radius: 5px;
+    position: relative; /* For the pseudo-element */
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 2px; /* Underline height */
+    width: 0;
+    background: #2980b9; /* Underline color */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links li a:hover {
+    color: #2980b9; /* Change text color on hover */
+    background-color: rgba(41, 128, 185, 0.1); /* Light background on hover */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Space between nav links and search box */
+}
+
+.search-box input {
+    padding: 8px;
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    margin-right: 5px;
+    max-width: 200px;
+}
+
+.search-box button {
+    padding: 8px 12px;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: rgb(102, 102, 237);
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #2315e8;
+}
+
+.quiz {
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    background: linear-gradient(to left, white, violet, rgb(115, 115, 240)); /* Gradient background */
+    text-align: center; /* Center text within the section */
+    padding: 0; /* Remove padding from top and bottom */
+}
+
+/* Heading styles */
+.row-1 {
+    color: #007BFF; /* Bright blue for subheading */
+    font-size: 1.5em; /* Size for emphasis */
+    margin-bottom: 10px; /* Space below */
+    font-family: 'Poppins', sans-serif;
+}
+
+.row-2 {
+    font-size: 2em; /* Main heading size */
+    margin-bottom: 20px; /* Space below */
+    color: #333; /* Dark color for contrast */
+    font-family: 'Poppins', sans-serif;
+}
+
+.row3 {
+    max-width: 600px; /* Set a max width for the paragraph */
+    margin: 20px auto; /* Center the paragraph horizontally */
+    font-size: 1.1em; /* Slightly larger for readability */
+    line-height: 1.8; /* Increased line height */
+    text-align: justify; /* Justified text for clean look */
+    font-family: 'Poppins', sans-serif;
+}
+
+#start, #learn {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 20px 10px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#start:hover, #learn:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+    box-shadow: 0 4px 8px rgba(225, 222, 222, 0.2);
+}
+
+.begin {
+    margin: 20px 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+}
+
+.try {
+    margin: 10px 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100;
+}
+
+.vision-mission {
+    background: linear-gradient(to left, white, violet, rgb(115, 115, 240));
+    margin-bottom: 0;
+    padding: 20px 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#visionandmission {
+    text-align: center;
+}
+
+.vision, .mission {
+    border: 1px solid #b2ebf2; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effects */
+    margin: 40px; /* Space around the section */
+    max-width: 600px; /* Limit width for readability */
+    margin: 50px 50px;
+}
+
+.vision {
+    float: left; /* Align to the left */
+}
+
+.mission {
+    float: right; /* Align to the right */
+}
+
+.vision:hover, .mission:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    background-color: rgb(237, 74, 156);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.core-values-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px; /* Space between the boxes */
+    margin: 20px 0; /* Margin for spacing above and below */
+}
+
+.core {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.core:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(237, 74, 156);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+/* General styles for the video section */
+.video {
+    max-width: 1600px; /* Limit the width of the section */
+    margin: 0 auto; /* Center the section horizontally */
+    padding: 20px; /* Add padding around the content */
+    text-align: center; /* Center the text */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    background: linear-gradient(to left, rgb(115, 115, 240), white, violet);
+}
+
+/* Styling for the title (h2) */
+.video h2 {
+    font-size: 2em; /* Larger font size for the title */
+    color: #333; /* Dark color for the title text */
+    font-weight: bold; /* Bold font */
+    margin-bottom: 10px; /* Space below the title */
+    line-height: 1.3; /* Slightly increased line-height for better readability */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Styling for the paragraph (p) */
+.video p {
+    font-size: 1.1em; /* Slightly larger text for the paragraph */
+    color: #555; /* Lighter color for the paragraph text */
+    margin-bottom: 20px; /* Space below the paragraph */
+    line-height: 1.6; /* More spacing between lines for readability */
+    font-family: cursive;
+}
+
+/* Make the iframe responsive */
+.video iframe {
+    width: 100%; /* Make iframe width 100% of its container */
+    max-width: 560px; /* Limit the maximum width to 560px */
+    height: auto; /* Height adjusts automatically based on the aspect ratio */
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+    border-radius: 8px; /* Rounded corners for the iframe */
+    margin: 0 auto; /* Center the iframe horizontally */
+    display: block; /* Block-level element to center it */
+}
+
+/* Responsive Styles */
+nav .fas {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-links {
+        display: none;
+    }
+    .navbar .fa-bars, .navbar .fa-times {
+        display: inline;
+    }
+    .quiz {
+        padding: 10px; /* Add padding for small screens */
+    }
+    .core-values-container {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .vision, .mission {
+        max-width: 100%; /* Full width for readability */
+        margin: 10px 0; /* Adjust margin */
+        float: none; /* Remove float */
+    }
+}

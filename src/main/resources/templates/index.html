@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>MindConnect</title>
+    <link rel="stylesheet" href="/css/style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" sizes="192x192" href="images/logo.jpg">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to right,violet,rgb(94, 94, 237));
+        }
+        .navbar-brand span {
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .navbar .fa-bars,
+            .navbar .fa-times {
+                display: inline;
+                cursor: pointer;
+            }
+        }
+        @media (min-width: 769px) {
+            .nav-links {
+                display: flex;
+            }
+            .navbar .fa-bars,
+            .navbar .fa-times {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg gradient-bg">
+            <div class="container-fluid d-flex align-items-center">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.jpg" alt="logo" width="55" height="55">
+                    <span><b>mind</b>connect</span>
+                </a>
+                <div class="mx-auto">
+                    <ul class="nav-links navbar-nav" id="sidemenu">
+                        <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/mental">Mental Health</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/aboutus">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contactus">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/testimonials">Testimonials</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a></li>
+                
+                        <!-- Show Logout only if user is logged in -->
+                        <li class="nav-item" th:if="${username != null}">
+                           <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+
+                        <!-- Show Login only if user is NOT logged in -->
+                        <li class="nav-item" th:if="${username == null}">
+                          <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        
+                        <!-- show username if login -->
+                        <li class="nav-item" th:if="${username != null}">
+                          <a class="nav-link" href="#">
+                            Welcome, <span th:text="${username}" style="color: #FF7F50 !important; font-weight: bold;">User</span>
+                          </a>
+                        </li>
+
+                        
+                    </ul>
+                    <i class="fas fa-bars" id="menu-icon" onclick="toggleMenu()"></i>
+                    <i class="fas fa-times" id="close-icon" onclick="toggleMenu()" style="display: none;"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <section>
+        <div class="quiz">
+            <h2 class="row-1">You Are Not Alone</h2>
+            <h1 class="row-2">It's Okay, Not to Be Okay</h1>
+            <p class="row3">Mind Connect can help you find judgment-free and confidential care you need for all mental and emotional concerns, small or large: stress, anger, depression, anxiety, emotional distress, and a variety of other conditions. Whether you’re looking for free anonymous support groups, individual therapy sessions, or psychiatry and medication, we’re here to help.</p>
+            <h2 class="begin">Not Sure Where to Begin?</h2>
+            <p class="try">Try our free Assessment</p>
+            <a href="/quiz1"><input type="submit" value="Free Assessment" id="start"></a>
+        </div>
+    </section>
+    <section class="video">
+        <h2>Know Why You Are Depressed?</h2>
+        <p>Big thanks to Rewirs for creating this amazing content!</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/T5y4jP45OPg?feature=shared"></iframe>
+        <a href="/learn"><input type="submit" value="Learn More" id="learn"></a>
+    </section>
+    <div class="vision-mission">
+        <section>
+            <h1 id="visionandmission">Our Vision and Mission</h1>
+            <div class="vision">
+                <h2>Our Vision</h2>
+                <p>To create a world where mental health is prioritized, understood, and openly discussed, enabling individuals to seek help without stigma and live fulfilling lives. We envision a supportive community where mental well-being is accessible to all. Together, we can make a difference in society.</p>
+            </div>
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>Our mission is to raise awareness about mental health issues, provide accessible consultation services, and empower individuals with knowledge and tools to improve their mental well-being. We strive to create safe spaces for open dialogue and support, fostering resilience and hope for all.</p>
+            </div>
+        </section>
+        <section>
+            <h1>Core Values</h1>
+            <div class="core-values-container">
+                <div class="core">
+                    <h2>Empathy</h2>
+                    <p>Empathy in mental health means genuinely understanding and sharing the feelings of others...</p>
+                </div>
+                <div class="core">
+                    <h2>Inclusivity</h2>
+                    <p>Inclusivity in mental health emphasizes the importance of welcoming individuals from all backgrounds...</p>
+                </div>
+                <div class="core">
+                    <h2>Education</h2>
+                    <p>Education is vital in mental health as it empowers individuals with knowledge about mental health conditions...</p>
+                </div>
+                <div class="core">
+                    <h2>Support</h2>
+                    <p>Support refers to the provision of emotional, psychological, and practical assistance...</p>
+                </div>
+                <div class="core">
+                    <h2>Integrity</h2>
+                    <p>Integrity in mental health involves being honest, ethical, and transparent...</p>
+                </div>
+                <div class="core">
+                    <h2>Collaboration</h2>
+                    <p>Collaboration highlights the importance of working together across different sectors...</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('sidemenu');
+            var menuIcon = document.getElementById('menu-icon');
+            var closeIcon = document.getElementById('close-icon');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+                menuIcon.style.display = 'inline';
+                closeIcon.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+                menuIcon.style.display = 'none';
+                closeIcon.style.display = 'inline';
+            }
+        }
+    </script>
+</body>
+</html>
+
+    <footer class="gradient-bg text-white pt-5 pb-4">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #add8e6;">MindConnect</h5>
+                    <p>MindConnect: Empowering Minds, Transforming Lives.<br>
+                        Your trusted partner in mental health awareness and support.
+                        Join us in creating a healthier, happier world for all.</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #add8e6;">Products</h5>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">MindTrack</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">TherapyConnect</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">WellnessHub</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">CommunityCircle</a></p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #add8e6;">Useful Links</h5>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Link 1</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Link 2</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Link 3</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Link 4</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #add8e6;">Contacts</h5>
+                    <p><i class="fas fa-home mr-3"></i> Ahilyanagar, Maharashtra 414001</p>
+                    <p><i class="fas fa-envelope mr-3"></i> mindconnect8.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> mindconnect8@gmail.com</p>
+                    <p><i class="fas fa-print mr-3"></i> (+91) 7219213732</p>
+                </div>
+            </div>
+            <hr class="mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p>&copy; 2025 All rights reserved by:
+                        <a href="#" style="text-decoration: none;">
+                            <strong class="text-warning">MindConnect</strong>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script> function toggleMenu() { var menu = document.getElementById('sidemenu'); var menuIcon = document.getElementById('menu-icon'); var closeIcon = document.getElementById('close-icon'); if (menu.style.display === 'block') { menu.style.display = 'none'; menuIcon.style.display = 'inline'; closeIcon.style.display = 'none'; } else { menu.style.display = 'block'; menuIcon.style.display = 'none'; closeIcon.style.display = 'inline'; } } </script>
+</body>
+</html>

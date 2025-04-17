@@ -1,0 +1,44 @@
+<<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Mental Health Support</title>
+    <link rel="stylesheet" href="/css/contactus.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contact-container">
+        <header>
+            <h1>Contact Us</h1>
+            <p>We're here to listen. Reach out to us for any support or questions you may have.</p>
+        </header>
+
+        <section class="contact-info">
+            <h2>Our Contact Information</h2>
+            <p>Email: <a href="mindconnect8@gmail.com">mindconnect8@gmail.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+91 7219213732</a></p>
+            
+        </section>
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="55a5c674-f2b2-4df2-97d9-8bf76e5a426b">
+            <h2>Send Us a Message</h2>
+            
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Message subject" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Write your message here..." rows="6" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>

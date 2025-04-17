@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Zoom Meeting with Doctor</title>
+    <link rel="stylesheet" href="/css/meeting.css">
+</head>
+<body>
+    <header>
+        <h1>Schedule a Google Meeting with Your Doctor</h1>
+    </header>
+
+    <main>
+        <section id="form-container">
+            <form id="zoom-scheduler-form" action="/submit" method="POST">
+                <label for="patient-name">Full Name:</label>
+                <input type="text" id="patient-name" name="patient-name" required>
+
+                <label for="patient-email">Email Address:</label>
+                <input type="email" id="patient-email" name="patient-email" required>
+
+                <label for="patient-phone">Phone Number:</label>
+                <input type="tel" id="patient-phone" name="patient-phone" required>
+
+                <label for="meeting-date">Preferred Date and Time:</label>
+                <input type="datetime-local" id="meeting-date" name="meeting-date" required>
+
+                <button type="submit">Schedule Meeting</button>
+            </form>
+
+            <div id="confirmation-message" class="hidden">
+                <p>Your meeting has been successfully scheduled! You will receive a confirmation email shortly.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 mindconnect_zoom_meeting. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

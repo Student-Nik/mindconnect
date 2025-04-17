@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mental Health of Young Indians</title>
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <style>
+     /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;  /* Light gray background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+    align-items: flex-start; /* Aligns content to the top */
+    height: 100%;
+    color: #333;
+    flex-direction: column;  /* Stacks sections vertically */
+    background-color: #2d3748;
+}
+
+.container {
+    width: 100%; /* Make the container use the full available width */
+    max-width: 1200px; /* Optional: maximum width for large screens */
+    margin: 30px auto; /* Centers the container */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    background-color: #c5d4ee;
+}
+
+/* Header Section */
+h1 {
+    text-align: center;
+    font-size: 2.8em;
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-weight: 600;
+    background: linear-gradient(to left,rgb(147, 147, 233),violet);
+    border-radius: 10px;
+}
+
+/* Paragraph under the header */
+p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Highlights and Key Insights Sections */
+.highlights, .key-insights {
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #4a5568;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Unordered List */
+ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0;
+}
+
+li {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding-left: 35px;
+    position: relative;
+}
+
+/* Highlight List Item Styling */
+.highlight-item {
+    display: flex;
+    align-items: center;
+}
+
+.highlight-item span {
+    font-size: 1.8em;
+    margin-right: 15px; /* Space between the icon and the text */
+    color: #2c5282;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1em;
+    color: #4a5568;
+    padding: 15px;
+    background-color: #f7fafc;
+    border-radius: 8px;
+}
+
+/* Additional Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Ensure it takes up 95% on smaller screens */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .highlight-item span {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%; /* Full width for mobile screens */
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .highlight-item span {
+        font-size: 1.4em;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>The Mental Health Crisis Among Young Indians</h1>
+
+        <p style="text-align: center;">Indians aged 14-28 often feel lonely and anxious due to social media comparison, lack of emotional support, and superficial relationships, leading to mental health issues.</p>
+
+        <div class="highlights">
+            <h2>Highlights</h2>
+            <ul>
+                <li class="highlight-item"><span>🌍</span> Young Indians feel increasingly lonely despite being connected online.</li>
+                <li class="highlight-item"><span>📉</span> Research shows today’s youth are more depressed and hopeless than previous generations.</li>
+                <li class="highlight-item"><span>📱</span> The rise of smartphones has weakened real-life emotional connections.</li>
+                <li class="highlight-item"><span>🤝</span> Family time has decreased, reducing emotional support for young people.</li>
+                <li class="highlight-item"><span>💔</span> Superficial relationships dominate, leading to emotional isolation.</li>
+                <li class="highlight-item"><span>🧠</span> Exercise is found to be more effective than traditional therapy for mental health.</li>
+                <li class="highlight-item"><span>💡</span> Understanding control over one’s reactions and thoughts can enhance mental peace.</li>
+            </ul>
+        </div>
+
+        <div class="key-insights">
+            <h2>Key Insights</h2>
+            <ul>
+                <li class="highlight-item"><span>🌐</span> Loneliness in Connectivity: Despite having access to vast social networks, many young Indians experience profound loneliness due to the lack of genuine connections in their lives. This paradox highlights the need for authentic relationships in a digital age.</li>
+                <li class="highlight-item"><span>📊</span> Increased Mental Health Issues: Studies show that younger generations report higher levels of depression and hopelessness, indicating a significant mental health crisis that demands immediate attention and intervention.</li>
+                <li class="highlight-item"><span>📉</span> Impact of Social Media: Continuous comparison with others on social media platforms contributes to a decline in self-esteem and increases anxiety, reinforcing feelings of inadequacy among youth.</li>
+                <li class="highlight-item"><span>🏠</span> Diminished Family Interaction: Modern lifestyles have led to less family bonding time, which is crucial for emotional support and open conversations about mental health struggles.</li>
+                <li class="highlight-item"><span>💔</span> Superficial Relationships: The shift toward superficial relationships has left many feeling isolated, as emotional depth is often sacrificed for convenience in connections.</li>
+                <li class="highlight-item"><span>🏋‍♂</span> Exercise as a Solution: Engaging in physical activity has been shown to significantly improve mental health, suggesting that incorporating regular exercise can serve as a practical remedy for anxiety and depression.</li>
+                <li class="highlight-item"><span>🧘‍♂</span> Focus on Control: Recognizing what aspects of life one can control, and accepting what cannot, can lead to improved mental resilience and a more balanced outlook on life.</li>
+            </ul>
+        </div>
+
+    <h3 style="text-align: center;">&copy all rights reserved by <span style="color: blue;">mindconnect</span></h3>
+    </div>
+    
+
+</body>
+</html>
